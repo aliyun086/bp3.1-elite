@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://192.168.1.112/STM32_ADC_TEMPERATE.shtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta http-equiv="refresh" content="5">
+<title>护理床远程网络监控</title>
+<style type="text/css">
+
+.ul1{margin:0;padding:0; list-style:none;}
+.li1{margin:0;padding:0; list-style:none;}
+.menu{width:1000px;height:48px;margin:0 auto; background:url(image/tab.jpg) repeat-x; }
+.menu ul{width:1000px;float:left;height:48px;display:inline;}
+.menu ul li{width:200px;height:48px; line-height:48px; text-align:center; float:left;display:inline; }
+.menu ul li a{width:200px;height:48px; float:left;text-decoration:none; color:#fff; font-size:18px;font-weight:bold;}
+.menu ul li a:hover{ background:#FF0000 repeat-x; }		
+
+.logo{}
+.bodystyle{  margin:0 auto; width:1000px; background:#d5d5d7;}
+ 
+</style>
+  
+</head>
+<body class="bodystyle">
+<div style="background-color:#FFFFFF;">
+<div class="logo">
+ <img src="/image/head.jpg" alt="护理床远程网络监控" title="洛溪新城中学" style="margin:20px 0px 0px 0px;">
+ 
+</div>
+ 
+<div class="menu">
+	<ul class="ul1">
+    	<li class="li1"><a href="/index.html">主页</a></li>
+        <li class="li1"><a href="/bp.shtml">血压测量</a></li>
+        <li class="li1"><a href="/temp.shtml">体温测量</a></li>
+        <li class="li1"><a href="/rtc.shtml">查看血压值</a></li>
+        <li class="li1"><a href="/angle.shtml" >床身角度</a></li>
+    </ul>
+</div>
+ 
+<div style="margin-top:30px;">
+
+</div>
+
+   <div style="background-color:#0066CC;color:#fff;margin-top:30px; ">
+                <h3>
+                  <span>此页面用来显示实时检测到的体温值</span>
+                </h3>
+</div>
+<div align="center">
+<!--
+<table border="1" cellpadding="10">
+<tbody><tr>
+  <td width="200">ADC1_CH1电压值ֵ</td>
+  <td width="200"><!-#t->mv</td> 
+</tr>   
+</tbody></table>
+<br><br>
+-->
+
+<table border="1" cellpadding="10"> 
+<tbody><tr>
+  <td width="200">体温</td>
+  <td width="200"><!--#w-->&#8451</td>
+</tr>
+</tbody></table>
+<br><br>
+ 
+ </div>
+ 
+ <div style="margin-left:5px;">
+<br>此Web Server例程是基于LWIP TCP/IP协议栈的一个应用。
+</div>
+
+<div style="background-color:#0066CC;color:#fff;  ">
+     <h3> 关于LWIP </h3>
+</div>
+
+<div style="margin-left:5px;width:1000px; ">
+<br>Lwip是Light Weight(轻型)IP协议,有无操作系统的支持都可以运行。Lwip实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需要十几KB的RAM和40K左右的ROM就可以运行,这使Lwip协议栈适合在低端的嵌入式系统中使用。Lwip由Adam Dunkels编写的一个开源的TCP/IP协议栈。<br><br>
+</div>
+
+</div>
+ <div align="center" style="margin-top:20px;margin-bottom:30px;">
+   
+         &#169; 广州城市职业学院 & 洛溪新城中学 | <a href="http://www.gcp.edu.cn/" target="_blank">官方网站</a>                 <br>  
+ </div>
+
+</body></html>

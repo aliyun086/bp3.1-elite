@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<title>护理床远程网络监控</title>
+<style type="text/css">
+
+.ul1{margin:0;padding:0; list-style:none;}
+.li1{margin:0;padding:0; list-style:none;}
+.menu{width:1000px;height:48px;margin:0 auto; background:url(image/tab.jpg) repeat-x; }
+.menu ul{width:1000px;float:left;height:48px;display:inline;}
+.menu ul li{width:200px;height:48px; line-height:48px; text-align:center; float:left;display:inline; }
+.menu ul li a{width:200px;height:48px; float:left;text-decoration:none; color:#fff; font-size:18px;font-weight:bold;}
+.menu ul li a:hover{ background:#FF0000 repeat-x; }		
+
+.logo{}
+.bodystyle{  margin:0 auto; width:1000px; background:#d5d5d7;}
+ 
+</style>
+  
+<script language="JavaScript">
+
+var secs = 0;
+var imageNr = 0; // Serial number of current image
+var finished = new Array(); // References to img objects which have finished downloading
+var paused = false;
+  
+function fetchBP()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("bpResult").innerHTML=xmlhttp.responseText;
+		}
+	}
+	//xmlhttp.open("GET","fetchBP.cgi?index=2",true);
+	xmlhttp.open("GET","beep.cgi?button=2",true);
+	xmlhttp.send();
+}
+  
+function count_bp(){
+  secs=80;
+  
+  //document.getElementById('button_bp').disabled=true;
+  //document.getElementById('button_tp').disabled=true;
+  //document.getElementById('button_up').disabled=true;
+  //document.getElementById('button_down').disabled=true;
+  //document.getElementById('button_stop').disabled=true;
+  
+  fetchBP();
+
+  for(i=1;i<=secs;i++) {
+    window.setTimeout("update(" + i + ")", i * 1000);
+  }
+
+}
+
+</script>
+
+</head>
+<body class="bodystyle">
+<div style="background-color:#FFFFFF;">
+<div class="logo">
+ <img src="/image/head.jpg" alt="护理床远程网络监控" title="洛溪新城中学" style="margin:20px 0px 0px 0px;">
+ 
+</div>
+ 
+<div class="menu">
+	<ul class="ul1">
+    	<li class="li1"><a href="/index.html">主页</a></li>
+        <li class="li1"><a href="/bp.shtml">血压测量</a></li>
+        <li class="li1"><a href="/temp.shtml">体温测量</a></li>
+        <li class="li1"><a href="/rtc.shtml">查看血压值</a></li>
+        <li class="li1"><a href="/angle.shtml" >床身角度</a></li>
+    </ul>
+</div>
+ 
+<div style="margin-top:30px;">
+
+</div>
+
+   <div style="background-color:#0066CC;color:#fff;margin-top:30px; ">
+                <h3>
+                  <span>此页面用来控制医疗床的抬升与下降</span>
+                </h3>
+</div>
+
+
+<div style="width:1000px; background-color:#0066CC;color:#fff;margin-top:30px;  ">
+                <h3>
+                  <span style="text-align:center;">控制1</span>
+                </h3>
+</div>
+<div style="margin-top:30px; text-align:center;">
+<form method="get" action="/leds.cgi">
+   
+      <input name="LED1" type="radio"  value="LED1ON" id="LED1_0">up 
+      <input name="LED1" type="radio"  value="LED1OFF" id="LED1_1"  checked="">down<br>
+<br>
+      <input name="button2" type="submit"  value="SEND" id="button2" >
+</form>
+</div>
+
+<div style="width:1000px; background-color:#0066CC;color:#fff; ">
+                <h3>
+                  <span style="text-align:center;">控制2</span>
+                </h3>
+</div>
+
+<div style="margin-top:30px; text-align:center;">
+<form name="form1" method="get" action="/leds2.cgi">
+  
+  <input name="LED2" type="radio"  value="LED2ON" id="BEEP_0">up 
+  <input name="LED2" type="radio"  value="LED2OFF" id="BEEP_1"  checked="">down<br> <br>
+  <br>
+     <input name="buttonbp" type="submit"  value="SEND"  id="buttonbp" > 
+   
+</form>
+</div>
+
+ 
+<div style="margin-left:5px;">
+<br>此Web Server例程是基于LWIP TCP/IP协议栈的一个应用。
+</div>
+
+<div style="background-color:#0066CC;color:#fff;  ">
+     <h3> 关于LWIP </h3>
+</div>
+
+<div style="margin-left:5px;width:1000px; ">
+<br>Lwip是Light Weight(轻型)IP协议,有无操作系统的支持都可以运行。Lwip实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需要十几KB的RAM和40K左右的ROM就可以运行,这使Lwip协议栈适合在低端的嵌入式系统中使用。Lwip由Adam Dunkels编写的一个开源的TCP/IP协议栈。<br><br>
+</div>
+ 
+</div>
+ <div align="center" style="margin-top:20px;margin-bottom:30px;">
+   
+         &#169; 广州城市职业学院 & 洛溪新城中学 | <a href="http://www.gcp.edu.cn/" target="_blank">官方网站</a>                 <br>          
+ </div>
+
+</body></html>
